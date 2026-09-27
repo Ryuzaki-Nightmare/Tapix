@@ -5,7 +5,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdbool.h>
-#include <stdlib.h>
+
 int kprintf(const char* restrict format, ...);
 int putchar(int);
 int puts(const char*);

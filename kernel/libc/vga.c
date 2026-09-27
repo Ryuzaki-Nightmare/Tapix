@@ -53,6 +53,6 @@ void vga_kputchar(char c) {
 }
 void vga_print(const char* s) {
     for (int i = 0; s[i]; i++) {
-        vga_putchar(s[i]);
+        vga_kputchar(s[i]);
     }
 }
