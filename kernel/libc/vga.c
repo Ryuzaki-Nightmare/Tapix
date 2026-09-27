@@ -26,17 +26,30 @@ void vga_putchar(char c) {
         if (cursor >= VGA_WIDTH * VGA_HEIGHT)
             cursor = 0;
         vga_set_color(VGA_GREEN, VGA_BLACK);
-        vga_print("> ");
+        vga_print(">");
         return;
     }
 
-    if (c == 9) {  // tab — avança até próximo múltiplo de 4
+    if (c == 9) {  // tab ï¿½ avanï¿½a atï¿½ prï¿½ximo mï¿½ltiplo de 4
         do {
             vga[cursor++] = (current_color << 8) | ' ';
         } while (cursor % 4 != 0);
         return;
     }
     vga[cursor++] = (current_color << 8) | c;
+}
+void vga_kputchar(char c) {
+    if(c == '\n'){
+        cursor = (cursor / VGA_WIDTH + 1) * VGA_WIDTH;
+        if (cursor >= VGA_WIDTH * VGA_HEIGHT) {
+            cursor = 0;
+        }
+        return; 
+    }
+    vga[cursor++] = (current_color << 8) | c;
+    if (cursor >= VGA_WIDTH * VGA_HEIGHT) {
+        cursor = 0;
+    }
 }
 void vga_print(const char* s) {
     for (int i = 0; s[i]; i++) {

@@ -27,5 +27,5 @@ void vga_putchar(char c);
 void vga_print(const char* s);
 void vga_backspace(void);
 void vga_newline(void);
-
+void vga_kputchar(char c);
 #endif
