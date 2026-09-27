@@ -47,7 +47,8 @@ void kernel_main(void)
     ISRs();
     load_IDT();
     asm volatile("sti");
-
+    int a = 12;
+    kprintf("%d",a);
     while(1){
       __asm__ volatile("hlt");
       asm("cli");
