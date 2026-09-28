@@ -8,11 +8,15 @@ align 8
     dw 0
     dd 8
 
+section .data
+        multiboot_info_addr dd 0
+    multiboot_magic      dd 0
 section .text
 bits 32
 global kernel_entry
-
 kernel_entry:
+    mov [multiboot_info_addr],ebx ; endereco da estrutura multiboot2 (boot info)
+   mov [multiboot_magic], eax
     cli
     mov esp, stack_top
 
