@@ -9,6 +9,8 @@ align 8
     dd 8
 
 section .data
+    global multiboot_info_addr
+    global multiboot_magic
     multiboot_info_addr dd 0
     multiboot_magic      dd 0
 section .text
