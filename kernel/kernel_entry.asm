@@ -9,7 +9,7 @@ align 8
     dd 8
 
 section .data
-        multiboot_info_addr dd 0
+    multiboot_info_addr dd 0
     multiboot_magic      dd 0
 section .text
 bits 32
