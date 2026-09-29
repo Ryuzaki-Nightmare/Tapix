@@ -5,6 +5,5 @@
 #include <limits.h>
 #include <stddef.h>
 #include <stdio.h>
-extern uint32_t multiboot_info_addr;
-extern uint32_t multiboot_magic;
+
 #endif
