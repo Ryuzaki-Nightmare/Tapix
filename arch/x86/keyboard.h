@@ -50,4 +50,5 @@ extern void irq1asm(void);
 #define TAB 0x0D /*\t*/
 
 extern uint8_t teclas[255];
+extern uint8_t teclas_count;
 #endif

@@ -97,6 +97,3 @@ void keyboard(uint8_t scancode) {
         }
     }
 }
-void shell(uint8_t key){
-
-}
