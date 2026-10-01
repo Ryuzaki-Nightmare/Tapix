@@ -2,7 +2,8 @@
 #define VGA_H
 
 #include <stdint.h>
-
+#include <keyboard.h>
+#include <string.h>
 enum vga_color {
     VGA_BLACK = 0x0,
     VGA_BLUE = 0x1,

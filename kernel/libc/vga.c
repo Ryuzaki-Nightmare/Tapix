@@ -25,12 +25,20 @@ void vga_putchar(char c) {
         cursor = (cursor / VGA_WIDTH + 1) * VGA_WIDTH;
         if (cursor >= VGA_WIDTH * VGA_HEIGHT)
             cursor = 0;
+        if(strcmp(teclas,'help' == 0))
+        {
+            vga_set_color(VGA_WHITE,VGA_BLACK);        
+            kprintf("Now, it's first Command\z");
+            }
         vga_set_color(VGA_GREEN, VGA_BLACK);
         vga_print(">");
+        /*Pensar como enviar last_key para  keyboard.c dnv*/
+
+        memset(teclas,0,sizeof(teclas)); /*Zera array do teclado para comecar dnv a contagem*/
         return;
     }
 
-    if (c == 9) {  // tab ï¿½ avanï¿½a atï¿½ prï¿½ximo mï¿½ltiplo de 4
+    if (c == 9) {  // tab  vai até proximo multiplo de 4
         do {
             vga[cursor++] = (current_color << 8) | ' ';
         } while (cursor % 4 != 0);
@@ -44,6 +52,15 @@ void vga_kputchar(char c) {
         if (cursor >= VGA_WIDTH * VGA_HEIGHT) {
             cursor = 0;
         }
+        vga_print(">");
+        return; 
+    }
+    if(c == '\z'){ // this is to commands
+        cursor = (cursor / VGA_WIDTH + 1) * VGA_WIDTH;
+        if (cursor >= VGA_WIDTH * VGA_HEIGHT) {
+            cursor = 0;
+        }
+        
         return; 
     }
     vga[cursor++] = (current_color << 8) | c;
