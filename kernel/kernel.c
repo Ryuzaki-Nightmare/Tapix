@@ -38,17 +38,16 @@ void kernel_main(void)
     vga_print(">");// pensar em um metodo que printe isso toda vez que apertar enter e que seja "inapagavel"
    
 
-    // vga_print(itoa((unsigned long)ptr)); MOSTRA VALOR onde kernel termina
+    
     vga_set_color(VGA_WHITE,VGA_BLACK);
 
-    /*ISRs 1 -> 21*/
-
+    
     geral_pic();
+    /*ISRs 1 -> 21 and IRQs*/
     ISRs();
     load_IDT();
     asm volatile("sti");
-    int a = 12;
-    kprintf("%d",a);
+    
     while(1){
       __asm__ volatile("hlt");
       asm("cli");
