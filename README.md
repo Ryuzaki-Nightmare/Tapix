@@ -5,7 +5,6 @@
 Tapix/
 ├── .gitignore
 ├── LICENSE
-├── License-lua.txt
 ├── Makefile
 ├── README.MD
 ├── linker.ld
