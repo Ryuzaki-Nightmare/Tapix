@@ -76,15 +76,24 @@ const char LowKeyboard[128] = {
          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, // 0x60: nao usado no Set 1 basico
          0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0, // 0x70: nao usado no Set 1 basico
 };
-//const char LowKeyboard[128] = {
-//    /*Refazer do Estilo da Func colada Acima, padrao teclado Espanhol mexicano */
-//};
+
+uint8_t teclas[255];
+
+
 uint8_t *tecladomomento = LowKeyboard;
 void keyboard(uint8_t scancode) {
     if (scancode < 250) {
         char c = tecladomomento[scancode];
         if (c != 0 && !(scancode & 0x80)) { // ignora key release (bit 7)
+            
+            
             last_key = c;
+            //teclas = last_key;
+            
+            
         }
     }
+}
+void shell(uint8_t key){
+
 }
