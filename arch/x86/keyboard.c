@@ -78,7 +78,7 @@ const char LowKeyboard[128] = {
 };
 
 uint8_t teclas[255];
-
+uint8_t teclas_count = 0;
 
 uint8_t *tecladomomento = LowKeyboard;
 void keyboard(uint8_t scancode) {
@@ -86,9 +86,12 @@ void keyboard(uint8_t scancode) {
         char c = tecladomomento[scancode];
         if (c != 0 && !(scancode & 0x80)) { // ignora key release (bit 7)
             
-            
+            /*Objetivo e colocar last key em teclas, atpé encher*/
             last_key = c;
-            
+            if (teclas_count < sizeof(teclas)) {
+                teclas[teclas_count] = c;
+                teclas_count++;
+            }
             
             
         }
