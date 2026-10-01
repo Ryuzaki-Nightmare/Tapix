@@ -14,5 +14,6 @@
 #include <keyboard.h>
 #include <string.h>
 #include <pmm.h>
+#include <shell.h>
 
 #endif
