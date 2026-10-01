@@ -41,7 +41,7 @@ void kernel_main(void)
     
     vga_set_color(VGA_WHITE,VGA_BLACK);
 
-    uint8_t teclas[255];
+    
     geral_pic();
     /*ISRs 1 -> 21 and IRQs*/
     ISRs();
