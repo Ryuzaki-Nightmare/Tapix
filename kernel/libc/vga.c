@@ -29,7 +29,8 @@ void vga_putchar(char c) {
         {
             vga_set_color(VGA_WHITE,VGA_BLACK);        
             kprintf("Now, it's first Command\z");
-            }
+        }
+
         vga_set_color(VGA_GREEN, VGA_BLACK);
         vga_print(">");
         /*Pensar como enviar last_key para  keyboard.c dnv*/

@@ -88,7 +88,7 @@ void keyboard(uint8_t scancode) {
             
             
             last_key = c;
-            //teclas = last_key;
+            
             
             
         }
