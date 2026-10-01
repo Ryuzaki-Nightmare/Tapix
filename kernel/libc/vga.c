@@ -25,6 +25,7 @@ void vga_putchar(char c) {
         cursor = (cursor / VGA_WIDTH + 1) * VGA_WIDTH;
         if (cursor >= VGA_WIDTH * VGA_HEIGHT)
             cursor = 0;
+        teclas[teclas_count] = '\0';
         if(strcmp(teclas,'help' == 0))
         {
             vga_set_color(VGA_WHITE,VGA_BLACK);        
@@ -33,9 +34,9 @@ void vga_putchar(char c) {
 
         vga_set_color(VGA_GREEN, VGA_BLACK);
         vga_print(">");
-        /*Pensar como enviar last_key para  keyboard.c dnv*/
-
+     
         memset(teclas,0,sizeof(teclas)); /*Zera array do teclado para comecar dnv a contagem*/
+        teclas_count = 0;
         return;
     }
 
