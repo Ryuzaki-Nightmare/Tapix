@@ -26,7 +26,7 @@ void vga_putchar(char c) {
         if (cursor >= VGA_WIDTH * VGA_HEIGHT)
             cursor = 0;
         
-        shell(teclas); // call funcition "shell" in kernel/terminal/shell.c
+        shell(); // call func "shell" in kernel/terminal/shell.c
         vga_set_color(VGA_GREEN, VGA_BLACK);
         vga_print(">");
      
@@ -35,7 +35,7 @@ void vga_putchar(char c) {
         return;
     }
 
-    if (c == 9) {  // tab  vai até proximo multiplo de 4
+    if (c == 9) {  // tab   go to next  multiple of  4
         do {
             vga[cursor++] = (current_color << 8) | ' ';
         } while (cursor % 4 != 0);
@@ -52,7 +52,7 @@ void vga_kputchar(char c) {
         vga_print(">");
         return; 
     }
-    if(c == '\z'){ // this is to commands
+    if(c == '\z'){ // this is "\n" to shell  commands
         cursor = (cursor / VGA_WIDTH + 1) * VGA_WIDTH;
         if (cursor >= VGA_WIDTH * VGA_HEIGHT) {
             cursor = 0;
