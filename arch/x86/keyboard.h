@@ -2,6 +2,7 @@
 #define KEYBOARD_H
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <vga.h>
 #include <pic.h>
 void keyboard( uint8_t scancode);
@@ -48,4 +49,6 @@ extern void irq1asm(void);
 #define SPACE 0x39
 #define TAB 0x0D /*\t*/
 
+extern uint8_t teclas[255];
+extern uint8_t teclas_count;
 #endif

@@ -5,7 +5,6 @@
 Tapix/
 ├── .gitignore
 ├── LICENSE
-├── License-lua.txt
 ├── Makefile
 ├── README.MD
 ├── linker.ld
@@ -17,7 +16,9 @@ Tapix/
     ├── kernel.h
     ├── kernel_entry.asm
     └── libc/
-        └── Minimal libc
+    |    └── Minimal libc
+    └── terminal/
+            └── terminal archives for shell
 
 ```
 ## Technologies
