@@ -91,6 +91,12 @@ void keyboard(uint8_t scancode) {
             if (teclas_count < sizeof(teclas)) {
                 teclas[teclas_count] = c;
                 teclas_count++;
+                kprintf(" %s  ",teclas);
+                /*
+                *Objective -> Save array "teclas"
+                *Read "teclas" in shell.c
+                * use kprintf to show command in terminal
+                */
             }
             
             
