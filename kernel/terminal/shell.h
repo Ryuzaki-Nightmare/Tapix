@@ -8,6 +8,6 @@
 #include <keyboard.h>
 #include <stdlib.h>
 #include <vga.h>
-void shell(uint8_t comandos[]);
+void shell(void);
 
 #endif
