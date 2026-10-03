@@ -23,18 +23,21 @@ void vga_putchar(char c) {
 
     if (c == 13) {  // enter
         cursor = (cursor / VGA_WIDTH + 1) * VGA_WIDTH;
-        if (cursor >= VGA_WIDTH * VGA_HEIGHT)
+        if (cursor >= VGA_WIDTH * VGA_HEIGHT){
+
             cursor = 0;
+        }
         
         shell(); // call func "shell" in kernel/terminal/shell.c
         vga_set_color(VGA_GREEN, VGA_BLACK);
         vga_print(">");
      
         memset(teclas,0,sizeof(teclas)); /*Zera array do teclado para comecar dnv a contagem*/
+        teclas_count = 0;
         
         return;
-    }
 
+    }
     if (c == 9) {  // tab   go to next  multiple of  4
         do {
             vga[cursor++] = (current_color << 8) | ' ';
